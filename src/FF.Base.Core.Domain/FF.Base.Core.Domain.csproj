@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FF.Base.Core.Exceptions\FF.Base.Core.Exceptions.csproj" />
+    <ProjectReference Include="..\FF.Base.Core.SeedWork\FF.Base.Core.SeedWork.csproj" />
+  </ItemGroup>
+
+</Project>
