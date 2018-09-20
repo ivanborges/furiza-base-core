@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Furīza Factory (C)</Copyright>
+    <Company>Furīza Factory</Company>
+    <Authors>ivanborges</Authors>
   </PropertyGroup>
 
   <ItemGroup>
