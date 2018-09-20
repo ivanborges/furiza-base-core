@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FF.Base.Core.Exceptions\FF.Base.Core.Exceptions.csproj" />
-    <ProjectReference Include="..\FF.Base.Core.SeedWork\FF.Base.Core.SeedWork.csproj" />
+    <PackageReference Include="FF.Base.Core.Exceptions" Version="1.0.0" />
+    <PackageReference Include="FF.Base.Core.SeedWork" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
