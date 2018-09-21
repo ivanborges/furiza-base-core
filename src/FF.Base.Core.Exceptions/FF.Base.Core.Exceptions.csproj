@@ -2,9 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>ivanborges</Authors>
+    <Authors>Furīza Factory</Authors>
     <Company>Furīza Factory</Company>
-    <Copyright>Furīza Factory (C)</Copyright>
+    <Copyright>Furīza Factory (C) 2018</Copyright>
+    <PackageProjectUrl>https://github.com/ivanborges/ff-base-core</PackageProjectUrl>
+    <Version>1.0.2</Version>
+    <Description>Exceptions project contains base exception and typed exception that you can use in order to throw errors known to the domain. In a webapi, a handler will capture these errors and generate a formatted output.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\FF.Base.Core.Exceptions.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\FF.Base.Core.Exceptions.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
 </Project>

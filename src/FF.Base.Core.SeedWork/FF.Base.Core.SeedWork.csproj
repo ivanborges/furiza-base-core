@@ -3,10 +3,23 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Company>Furīza Factory</Company>
-    <Authors>ivanborges</Authors>
-    <Copyright>Furīza Factory (C)</Copyright>
+    <Authors>Furīza Factory</Authors>
+    <Copyright>Furīza Factory (C) 2018</Copyright>
     <Product>FF.Base.Core.SeedWork</Product>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/ivanborges/ff-base-core</PackageProjectUrl>
+    <Version>1.0.2</Version>
+    <Description>SeedWork project contains base classes and interfaces that you can use as a base for your domain entities and value objects.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\FF.Base.Core.SeedWork.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\FF.Base.Core.SeedWork.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
 </Project>

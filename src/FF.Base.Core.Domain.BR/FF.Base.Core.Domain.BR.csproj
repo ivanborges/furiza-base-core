@@ -2,21 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Copyright>Furīza Factory (C) 2018</Copyright>
-    <Company>Furīza Factory</Company>
     <Authors>Furīza Factory</Authors>
-    <PackageProjectUrl>https://github.com/ivanborges/ff-base-core</PackageProjectUrl>
-    <Version>1.0.2</Version>
     <Description>Domain project contains entities and value objects widely used in various brazilian business domains.</Description>
+    <Copyright>Furīza Factory (C) 2018</Copyright>
+    <PackageProjectUrl>https://github.com/ivanborges/ff-base-core</PackageProjectUrl>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\FF.Base.Core.Domain.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>bin\Debug\netstandard2.0\FF.Base.Core.Domain.BR.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\FF.Base.Core.Domain.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\FF.Base.Core.Domain.BR.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
