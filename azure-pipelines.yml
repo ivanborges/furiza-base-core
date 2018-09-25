@@ -44,7 +44,7 @@ steps:
     command: push
     nuGetFeedType: external
     packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.nupkg'
-    publishFeedCredentials: 'apikey-nuget-core-seedwork'
+    publishFeedCredentials: 'teste'
 
 # Abaixo, instruções para webapi. Serão removidas após criada a primeira.
 ## Run unit tests
