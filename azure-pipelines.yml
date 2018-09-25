@@ -12,24 +12,43 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+# Install NuGet Tool
 - task: NuGetToolInstaller@0
+  displayName: Install NuGet Tool
 
+# Restore NuGet packages
 - task: NuGetCommand@2
+  displayName: Restore NuGet Packages
   inputs:
     restoreSolution: '$(solution)'
 
+# Compile
 - task: VSBuild@1
+  displayName: Build Solution
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+# Run unit tests
 - task: VSTest@2
+  displayName: Run Unit Tests
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
+# Prepare publish files
+- task: DotNetCoreCLI@2
+  displayName: Prepare Publish Files
+  inputs:
+    command: publish
+    solution: '$(solution)'
+    #projects: src/BuildYaml
+    arguments: --output $(Build.ArtifactStagingDirectory)
 
+# Publish the artifacts
 - task: PublishBuildArtifacts@1
+  displayName: Publish Artifacts
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'drop' 
