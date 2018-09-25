@@ -30,26 +30,35 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-# Run unit tests
-- task: VSTest@2
-  displayName: Run Unit Tests
+# Pack Furiza.Base.Core.SeedWork
+- task: NuGetCommand@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: pack
+    packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
     
-# Prepare publish files
-- task: DotNetCoreCLI@2
-  displayName: Prepare Publish Files
-  inputs:
-    command: publish
-    solution: '$(solution)'
-    #projects: src/BuildYaml
-    arguments: --output $(Build.ArtifactStagingDirectory)
+# Push Furiza.Base.Core.SeedWork
 
-# Publish the artifacts
-- task: PublishBuildArtifacts@1
-  displayName: Publish Artifacts
-  inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-    artifactName: 'drop' 
-    publishLocation: 'Container'
+# Abaixo, instruções para webapi. Serão removidas após criada a primeira.
+## Run unit tests
+#- task: VSTest@2
+  #displayName: Run Unit Tests
+  #inputs:
+    #platform: '$(buildPlatform)'
+    #configuration: '$(buildConfiguration)'
+    
+## Prepare publish files
+#- task: DotNetCoreCLI@2
+  #displayName: Prepare Publish Files
+  #inputs:
+    #command: publish
+    #solution: '$(solution)'
+    #projects: src/BuildYaml
+    #arguments: --output $(Build.ArtifactStagingDirectory)
+
+## Publish the artifacts
+#- task: PublishBuildArtifacts@1
+  #displayName: Publish Artifacts
+  #inputs:
+    #pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    #artifactName: 'drop' 
+    #publishLocation: 'Container'
