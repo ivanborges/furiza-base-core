@@ -4,12 +4,15 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
 pool:
-  vmImage: 'VS2017-Win2016'
+  vmImage: 'VS2017-Win2016'  
 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  
+trigger:
+- releases/*
 
 steps:
 # Install NuGet Tool
@@ -43,7 +46,7 @@ steps:
   inputs:
     command: push
     nuGetFeedType: external
-    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.nupkg'
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.*.*.nupkg'
     publishFeedCredentials: 'apikey-nuget-core-seedwork'
 
 # Abaixo, instruções para webapi. Serão removidas após criada a primeira.
