@@ -1,6 +1,6 @@
-﻿using FF.Base.Core.Exceptions;
+﻿using Furiza.Base.Core.Exceptions;
 
-namespace FF.Base.Core.Domain.BR.Exceptions
+namespace Furiza.Base.Core.Domain.BR.Exceptions
 {
     public class CpfInvalidoException : CoreException
     {

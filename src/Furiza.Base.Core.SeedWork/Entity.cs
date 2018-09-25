@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlTypes;
 
-namespace FF.Base.Core.SeedWork
+namespace Furiza.Base.Core.SeedWork
 {
     public abstract class Entity
     {

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FF.Base.Core.SeedWork", "FF.Base.Core.SeedWork\FF.Base.Core.SeedWork.csproj", "{4B2AE227-28D5-4D83-BD6F-3E942B1C2606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furiza.Base.Core.SeedWork", "Furiza.Base.Core.SeedWork\Furiza.Base.Core.SeedWork.csproj", "{4B2AE227-28D5-4D83-BD6F-3E942B1C2606}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FF.Base.Core.Exceptions", "FF.Base.Core.Exceptions\FF.Base.Core.Exceptions.csproj", "{1A9A67C1-9636-42A4-8038-099F643ABCC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furiza.Base.Core.Exceptions", "Furiza.Base.Core.Exceptions\Furiza.Base.Core.Exceptions.csproj", "{1A9A67C1-9636-42A4-8038-099F643ABCC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FF.Base.Core.Domain.BR", "FF.Base.Core.Domain.BR\FF.Base.Core.Domain.BR.csproj", "{34AB4A3B-A420-4642-9E6F-C818F19EFF8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furiza.Base.Core.Domain.BR", "Furiza.Base.Core.Domain.BR\Furiza.Base.Core.Domain.BR.csproj", "{34AB4A3B-A420-4642-9E6F-C818F19EFF8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

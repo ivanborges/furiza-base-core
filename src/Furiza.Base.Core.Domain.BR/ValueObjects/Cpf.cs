@@ -1,10 +1,10 @@
-﻿using FF.Base.Core.Domain.BR.Exceptions;
-using FF.Base.Core.SeedWork;
+﻿using Furiza.Base.Core.Domain.BR.Exceptions;
+using Furiza.Base.Core.SeedWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FF.Base.Core.Domain.BR.ValueObjects
+namespace Furiza.Base.Core.Domain.BR.ValueObjects
 {
     public sealed class Cpf : ValueObject
     {

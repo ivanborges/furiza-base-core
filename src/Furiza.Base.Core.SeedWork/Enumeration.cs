@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace FF.Base.Core.SeedWork
+namespace Furiza.Base.Core.SeedWork
 {
     public abstract class Enumeration : IComparable
     {

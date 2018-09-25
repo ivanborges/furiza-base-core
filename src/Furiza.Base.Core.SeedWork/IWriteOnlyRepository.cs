@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FF.Base.Core.SeedWork
+namespace Furiza.Base.Core.SeedWork
 {
     public interface IWriteOnlyRepository<T> where T : IAggregateRoot
     {

@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 
-namespace FF.Base.Core.Exceptions
+namespace Furiza.Base.Core.Exceptions
 {
     public abstract class CoreExceptionItem : IComparable
     {

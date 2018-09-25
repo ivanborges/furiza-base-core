@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace FF.Base.Core.SeedWork
+namespace Furiza.Base.Core.SeedWork
 {
     public interface IReadOnlyRepository<T> where T : IAggregateRoot
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace FF.Base.Core.Exceptions
+namespace Furiza.Base.Core.Exceptions
 {
     public abstract class CoreException : Exception
     {
