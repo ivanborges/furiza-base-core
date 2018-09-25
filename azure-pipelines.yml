@@ -29,5 +29,8 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- script: dotnet publish --output $(Build.ArtifactStagingDirectory)
 - task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'drop' 
+    publishLocation: 'Container'
