@@ -32,11 +32,19 @@ steps:
 
 # Pack Furiza.Base.Core.SeedWork
 - task: DotNetCoreCLI@2
+  displayName: Pack Furiza.Base.Core.SeedWork
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
     
 # Push Furiza.Base.Core.SeedWork
+- task: DotNetCoreCLI@2
+  displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
+  inputs:
+    command: push
+    nuGetFeedType: 'external'
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.nupkg'
+    publishFeedCredentials: apikey-nuget-core-seedwork
 
 # Abaixo, instruções para webapi. Serão removidas após criada a primeira.
 ## Run unit tests
