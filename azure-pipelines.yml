@@ -31,7 +31,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
 # Pack Furiza.Base.Core.SeedWork
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
