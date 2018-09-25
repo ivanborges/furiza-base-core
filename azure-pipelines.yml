@@ -38,11 +38,11 @@ steps:
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
     
 # Push Furiza.Base.Core.SeedWork
-- task: DotNetCoreCLI@2
+- task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
   inputs:
     command: push
-    nuGetFeedType: 'external'
+    nuGetFeedType: external
     packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.nupkg'
     publishFeedCredentials: 'apikey-nuget-core-seedwork'
 
