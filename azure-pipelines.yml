@@ -48,7 +48,7 @@ steps:
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
-    #versioningScheme: byPrereleaseNumber
+    versioningScheme: byPrereleaseNumber
     majorVersion: '$(SeedWorkMajor)'
     minorVersion: '$(SeedWorkMinor)'
     patchVersion: '$(SeedWorkPatch)'
