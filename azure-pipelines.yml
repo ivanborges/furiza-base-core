@@ -16,7 +16,7 @@ variables:
   #Major: '1'
   #Minor: '0'
   #Patch: '1'
-  Version: '1.0.1-alpha.$(Rev:r)'
+  Version: '1.0.1-alpha'
 
 steps:
 # Install NuGet Tool
@@ -44,7 +44,7 @@ steps:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: Version
+    versionEnvVar: '$(Version).$(Rev:r)'
     
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
