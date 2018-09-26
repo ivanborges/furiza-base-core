@@ -47,9 +47,8 @@ steps:
   inputs:
     command: publish
     publishWebProjects: False
-    solution: '$(solution)'
-    #projects: src/BuildYaml
-    arguments: --output $(Build.ArtifactStagingDirectory)
+    projects: '**/**/Furiza.Base.Core.*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
 
 # Pack projects
 #- task: DotNetCoreCLI@2
