@@ -15,7 +15,7 @@ variables:
   buildConfiguration: 'Release'
   Major: '1'
   Minor: '0'
-  Patch: '0'
+  Patch: '1'
 
 steps:
 # Install NuGet Tool
@@ -47,14 +47,14 @@ steps:
     minorVersion: '$(Minor)'
     patchVersion: '$(Patch)'
     
-## Push Furiza.Base.Core.SeedWork
-#- task: NuGetCommand@2
-  #displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  #inputs:
-    #command: push
-    #nuGetFeedType: external
-    #packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
-    #publishFeedCredentials: 'apikey-nuget-core-seedwork'
+# Push Furiza.Base.Core.SeedWork
+- task: NuGetCommand@2
+  displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-core-seedwork'
 
 # Abaixo, instruções para webapi. Serão removidas após criada a primeira.
 ## Run unit tests
