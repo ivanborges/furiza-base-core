@@ -13,10 +13,15 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  #Major: '1'
-  #Minor: '0'
-  #Patch: '1'
-  Version: '1.0.1-alpha'
+  SeedWorkMajor: '1'
+  SeedWorkMinor: '0'
+  SeedWorkPatch: '1'
+  ExceptionsMajor: '1'
+  ExceptionsMinor: '0'
+  ExceptionsPatch: '0'  
+  DomainBRMajor: '1'
+  DomainBRMinor: '0'
+  DomainBRPatch: '0'
 
 steps:
 # Install NuGet Tool
@@ -43,8 +48,10 @@ steps:
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
-    versioningScheme: byEnvVar
-    versionEnvVar: $(Version).$(rev:.r)
+    versioningScheme: byPrereleaseNumber
+    majorVersion: '$(SeedWorkMajor)'
+    minorVersion: '$(SeedWorkMinor)'
+    patchVersion: '$(SeedWorkPatch)'
     
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
