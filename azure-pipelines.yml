@@ -68,7 +68,7 @@ steps:
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  condition: and(succeeded(), eq(variables['releaseVersion'], variables['version'])
+  condition: and(succeeded(), eq(variables['releaseVersion'], variables['version']))
   inputs:
     command: push
     nuGetFeedType: external
