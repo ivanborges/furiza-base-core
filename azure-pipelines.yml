@@ -12,9 +12,9 @@ trigger:
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+  buildConfiguration: 'Release'  
   version: '1.0.1'
-  releaseVersion: '1.0.1'
+  pushToNuget: False
 
 steps:
 # Install NuGet Tool
@@ -68,7 +68,7 @@ steps:
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  condition: and(succeeded(), eq(variables['releaseVersion'], variables['version']))
+  condition: pushToNuget
   inputs:
     command: push
     nuGetFeedType: external
@@ -78,7 +78,7 @@ steps:
 # Push Furiza.Base.Core.Exceptions
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Exceptions to NuGet.org
-  condition: and(succeeded(), eq(variables['releaseVersion'], variables['version']))
+  condition: pushToNuget
   inputs:
     command: push
     nuGetFeedType: external
@@ -88,52 +88,9 @@ steps:
 # Push Furiza.Base.Core.Domain.BR
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Domain.BR to NuGet.org
-  condition: and(succeeded(), eq(variables['releaseVersion'], variables['version']))
+  condition: pushToNuget
   inputs:
     command: push
     nuGetFeedType: external
     packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.Domain.BR.*.nupkg'
     publishFeedCredentials: 'apikey-nuget-core-domain.br'
-
-# Pack projects
-#- task: DotNetCoreCLI@2
-  #displayName: Pack Projects
-  #inputs:
-    #command: pack
-    #packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
-    #versioningScheme: byEnvVar
-    #versionEnvVar: version
-    
-## Push Furiza.Base.Core.SeedWork
-#- task: NuGetCommand@2
-  #displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  #inputs:
-    #command: push
-    #nuGetFeedType: external
-    #packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
-    #publishFeedCredentials: 'apikey-nuget-core-seedwork'
-
-# Abaixo, instruções para webapi. Serão removidas após criada a primeira.
-## Run unit tests
-#- task: VSTest@2
-  #displayName: Run Unit Tests
-  #inputs:
-    #platform: '$(buildPlatform)'
-    #configuration: '$(buildConfiguration)'
-    
-## Prepare publish files
-#- task: DotNetCoreCLI@2
-  #displayName: Prepare Publish Files
-  #inputs:
-    #command: publish
-    #solution: '$(solution)'
-    #projects: src/BuildYaml
-    #arguments: --output $(Build.ArtifactStagingDirectory)
-
-## Publish the artifacts
-#- task: PublishBuildArtifacts@1
-  #displayName: Publish Artifacts
-  #inputs:
-    #pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-    #artifactName: 'drop' 
-    #publishLocation: 'Container'
