@@ -41,6 +41,16 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
+# Pack projects
+- task: DotNetCoreCLI@2
+  displayName: Pack Projects
+  inputs:
+    command: pack
+    packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
+    packDirectory: ''
+    versioningScheme: byEnvVar
+    versionEnvVar: version
+    
 # Prepare publish files
 - task: DotNetCoreCLI@2
   displayName: Prepare Publish Files
