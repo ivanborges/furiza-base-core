@@ -68,7 +68,7 @@ steps:
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  condition: pushToNuget
+  condition: variables['pushToNuget']
   inputs:
     command: push
     nuGetFeedType: external
@@ -78,7 +78,7 @@ steps:
 # Push Furiza.Base.Core.Exceptions
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Exceptions to NuGet.org
-  condition: pushToNuget
+  condition: variables['pushToNuget']
   inputs:
     command: push
     nuGetFeedType: external
@@ -88,7 +88,7 @@ steps:
 # Push Furiza.Base.Core.Domain.BR
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Domain.BR to NuGet.org
-  condition: pushToNuget
+  condition: variables['pushToNuget']
   inputs:
     command: push
     nuGetFeedType: external
