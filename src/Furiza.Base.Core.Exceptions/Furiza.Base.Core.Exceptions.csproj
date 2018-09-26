@@ -3,10 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Furīza</Authors>
-    <Company>Furīza</Company>
     <Copyright>Furīza (C) 2018</Copyright>
     <PackageProjectUrl>https://github.com/ivanborges/furiza-base-core</PackageProjectUrl>
-    <Version>1.0.0</Version>
     <Description>Exceptions project contains base exception and typed exception that you can use in order to throw errors known to the domain. In a webapi, a handler will capture these errors and generate a formatted output.</Description>
   </PropertyGroup>
 
