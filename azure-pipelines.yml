@@ -40,15 +40,24 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
+# Prepare publish files
+- task: DotNetCoreCLI@2
+  displayName: Prepare Publish Files
+  inputs:
+    command: publish
+    solution: '$(solution)'
+    #projects: src/BuildYaml
+    arguments: --output $(Build.ArtifactStagingDirectory)
 
 # Pack projects
-- task: DotNetCoreCLI@2
-  displayName: Pack Projects
-  inputs:
-    command: pack
-    packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
-    versioningScheme: byEnvVar
-    versionEnvVar: version
+#- task: DotNetCoreCLI@2
+  #displayName: Pack Projects
+  #inputs:
+    #command: pack
+    #packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
+    #versioningScheme: byEnvVar
+    #versionEnvVar: version
     
 ## Push Furiza.Base.Core.SeedWork
 #- task: NuGetCommand@2
