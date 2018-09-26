@@ -44,7 +44,7 @@ steps:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: '$(Version).$(Rev:r)'
+    versionEnvVar: '1.0.1-alpha.$(Rev:r)'
     
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
