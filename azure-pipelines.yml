@@ -4,7 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
 pool:
-  vmImage: 'VS2017-Win2016'  
+  vmImage: 'VS2017-Win2016'
+  
+trigger:
+- master
 
 variables:
   solution: '**/*.sln'
