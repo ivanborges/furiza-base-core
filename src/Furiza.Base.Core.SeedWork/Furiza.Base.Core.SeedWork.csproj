@@ -2,11 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Company>Furīza</Company>
     <Authors>Furīza</Authors>
     <Copyright>Furīza (C) 2018</Copyright>
-    <Product>Furiza.Base.Core.SeedWork</Product>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/ivanborges/furiza-base-core</PackageProjectUrl>
     <Description>SeedWork project contains base classes and interfaces that you can use as a base for your domain entities and value objects.</Description>
   </PropertyGroup>
