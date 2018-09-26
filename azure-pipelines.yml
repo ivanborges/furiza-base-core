@@ -13,15 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  SeedWorkMajor: '1'
-  SeedWorkMinor: '0'
-  SeedWorkPatch: '1'
-  ExceptionsMajor: '1'
-  ExceptionsMinor: '0'
-  ExceptionsPatch: '0'  
-  DomainBRMajor: '1'
-  DomainBRMinor: '0'
-  DomainBRPatch: '0'
+  version: '1.0.0'
 
 steps:
 # Install NuGet Tool
@@ -34,33 +26,38 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-# Compile
+# Build solution
 - task: VSBuild@1
   displayName: Build Solution
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
+# Run unit tests
+- task: VSTest@2
+  displayName: Run Unit Tests
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
-# Pack Furiza.Base.Core.SeedWork
+# Pack projects
 - task: DotNetCoreCLI@2
-  displayName: Pack Furiza.Base.Core.SeedWork
+  displayName: Pack Projects
   inputs:
     command: pack
-    packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
-    versioningScheme: byPrereleaseNumber
-    majorVersion: '$(SeedWorkMajor)'
-    minorVersion: '$(SeedWorkMinor)'
-    patchVersion: '$(SeedWorkPatch)'
+    packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: version
     
-# Push Furiza.Base.Core.SeedWork
-- task: NuGetCommand@2
-  displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  inputs:
-    command: push
-    nuGetFeedType: external
-    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
-    publishFeedCredentials: 'apikey-nuget-core-seedwork'
+## Push Furiza.Base.Core.SeedWork
+#- task: NuGetCommand@2
+  #displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
+  #inputs:
+    #command: push
+    #nuGetFeedType: external
+    #packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
+    #publishFeedCredentials: 'apikey-nuget-core-seedwork'
 
 # Abaixo, instruções para webapi. Serão removidas após criada a primeira.
 ## Run unit tests
