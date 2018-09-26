@@ -2,14 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Furīza</Authors>
-    <Description>Domain project contains entities and value objects widely used in various brazilian business domains.</Description>
+    <Authors>Furīza</Authors>    
     <Copyright>Furīza (C) 2018</Copyright>
     <PackageProjectUrl>https://github.com/ivanborges/furiza-base-core</PackageProjectUrl>
-    <ApplicationIcon />
-    <OutputType>Library</OutputType>
-    <StartupObject />
-    <Company>Furīza</Company>
+    <Description>Domain project contains entities and value objects widely used in various brazilian business domains.</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
