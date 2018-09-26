@@ -13,7 +13,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  version: '1.0.0'
+  version: '1.0.1'
+  releaseVersion: '1.0.0'
 
 steps:
 # Install NuGet Tool
@@ -41,16 +42,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
-# Pack projects
-- task: DotNetCoreCLI@2
-  displayName: Pack Projects
-  inputs:
-    command: pack
-    packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
-    packDirectory: ''
-    versioningScheme: byEnvVar
-    versionEnvVar: version
-    
 # Prepare publish files
 - task: DotNetCoreCLI@2
   displayName: Prepare Publish Files
@@ -64,6 +55,28 @@ steps:
 # Publish the artifacts
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifacts
+  
+# Pack projects
+- task: DotNetCoreCLI@2
+  displayName: Pack Projects
+  inputs:
+    command: pack
+    packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: version    
+    
+# Push Furiza.Base.Core.SeedWork
+- task: NuGetCommand@2
+  displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
+  condition: and(succeeded(), eq(variables['releaseVersion'], variables['version'])
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-core-seedwork'
+    
+    
+    
 
 # Pack projects
 #- task: DotNetCoreCLI@2
