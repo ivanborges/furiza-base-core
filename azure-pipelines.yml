@@ -49,6 +49,7 @@ steps:
     publishWebProjects: False
     projects: '**/**/Furiza.Base.Core.*.csproj'
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: False
     
 # Publish the artifacts
 - task: PublishBuildArtifacts@1
