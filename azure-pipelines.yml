@@ -9,7 +9,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'  
   version: '1.0.1'
-  pushToNuget: False
+  #pushToNuget: False
 
 steps:
 # Install NuGet Tool
@@ -63,7 +63,8 @@ steps:
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  condition: eq(variables['pushToNuget'], 'True')
+  #condition: eq(variables['pushToNuget'], 'True')
+  continueOnError: True
   inputs:
     command: push
     nuGetFeedType: external
@@ -73,7 +74,8 @@ steps:
 # Push Furiza.Base.Core.Exceptions
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Exceptions to NuGet.org
-  condition: eq(variables['pushToNuget'], 'True')
+  #condition: eq(variables['pushToNuget'], 'True')
+  continueOnError: True
   inputs:
     command: push
     nuGetFeedType: external
@@ -83,7 +85,8 @@ steps:
 # Push Furiza.Base.Core.Domain.BR
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Domain.BR to NuGet.org
-  condition: eq(variables['pushToNuget'], 'True')
+  #condition: eq(variables['pushToNuget'], 'True')
+  continueOnError: True
   inputs:
     command: push
     nuGetFeedType: external
