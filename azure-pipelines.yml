@@ -46,6 +46,7 @@ steps:
   displayName: Prepare Publish Files
   inputs:
     command: publish
+    publishWebProjects: False
     solution: '$(solution)'
     #projects: src/BuildYaml
     arguments: --output $(Build.ArtifactStagingDirectory)
