@@ -1,13 +1,13 @@
 pool:
   vmImage: 'VS2017-Win2016'
-  
+
 trigger:
 - master
 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'  
+  buildConfiguration: 'Release'
   version: '1.0.1'
   pushToNuget: False
 
@@ -29,14 +29,14 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    
+
 # Run unit tests
 - task: VSTest@2
   displayName: Run Unit Tests
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    
+
 # Prepare publish files
 - task: DotNetCoreCLI@2
   displayName: Prepare Publish Files
@@ -46,11 +46,11 @@ steps:
     projects: '**/**/Furiza.Base.Core.*.csproj'
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: False
-    
+
 # Publish the artifacts
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifacts
-  
+
 # Pack projects
 - task: DotNetCoreCLI@2
   displayName: Pack Projects
@@ -58,8 +58,8 @@ steps:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: version    
-    
+    versionEnvVar: version
+
 # Push Furiza.Base.Core.SeedWork
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
@@ -70,7 +70,7 @@ steps:
     nuGetFeedType: external
     packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
     publishFeedCredentials: 'apikey-nuget-core-seedwork'
-    
+
 # Push Furiza.Base.Core.Exceptions
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Exceptions to NuGet.org
@@ -81,7 +81,7 @@ steps:
     nuGetFeedType: external
     packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.Exceptions.*.nupkg'
     publishFeedCredentials: 'apikey-nuget-core-exceptions'
-    
+
 # Push Furiza.Base.Core.Domain.BR
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Domain.BR to NuGet.org
