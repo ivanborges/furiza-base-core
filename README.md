@@ -3,7 +3,7 @@
 
 # :boom: furiza-base-core
 Base packages for core layers (domain and application).
-
+|   |   |
 |---|:-----:|
 |**Furiza.Base.Core.SeedWork**|![NuGet](https://img.shields.io/nuget/v/Furiza.Base.Core.SeedWork.svg)| 
 |**Furiza.Base.Core.SeedWork**|![NuGet](https://img.shields.io/nuget/v/Furiza.Base.Core.SeedWork.svg)| 
