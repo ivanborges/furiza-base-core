@@ -3,6 +3,13 @@ pool:
 
 trigger:
 - master
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
 
 variables:
   solution: '**/*.sln'
