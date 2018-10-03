@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Furīza</Authors>
+    <Copyright>Furīza (C) 2018</Copyright>
+    <PackageProjectUrl>https://github.com/ivanborges/furiza-base-core</PackageProjectUrl>
+    <Description>Abstractions project contains interfaces that you may use to implement authentication and authorization logic and to transform user claims principal into a rich domain entity.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Furiza.Base.Core.Identity.Abstractions.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Furiza.Base.Core.Identity.Abstractions.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+</Project>
