@@ -1,0 +1,99 @@
+pool:
+  vmImage: 'VS2017-Win2016'
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  version: '1.0.1'
+  pushToNuget: False
+
+steps:
+# Install NuGet Tool
+- task: NuGetToolInstaller@0
+  displayName: Install NuGet Tool
+
+# Restore NuGet packages
+- task: NuGetCommand@2
+  displayName: Restore NuGet Packages
+  inputs:
+    restoreSolution: '$(solution)'
+
+# Build solution
+- task: VSBuild@1
+  displayName: Build Solution
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+# Run unit tests
+- task: VSTest@2
+  displayName: Run Unit Tests
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+# Prepare publish files
+- task: DotNetCoreCLI@2
+  displayName: Prepare Publish Files
+  inputs:
+    command: publish
+    publishWebProjects: False
+    projects: '**/**/Furiza.Base.Core.*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: False
+
+# Publish the artifacts
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifacts
+
+# Pack projects
+- task: DotNetCoreCLI@2
+  displayName: Pack Projects
+  inputs:
+    command: pack
+    packagesToPack: '**/**/Furiza.Base.Core.*.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: version
+
+# Push Furiza.Base.Core.SeedWork
+- task: NuGetCommand@2
+  displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
+  condition: eq(variables['pushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.SeedWork.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-core-seedwork'
+
+# Push Furiza.Base.Core.Exceptions
+- task: NuGetCommand@2
+  displayName: Push Furiza.Base.Core.Exceptions to NuGet.org
+  condition: eq(variables['pushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.Exceptions.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-core-exceptions'
+
+# Push Furiza.Base.Core.Domain.BR
+- task: NuGetCommand@2
+  displayName: Push Furiza.Base.Core.Domain.BR to NuGet.org
+  condition: eq(variables['pushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.Domain.BR.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-core-domain.br'
