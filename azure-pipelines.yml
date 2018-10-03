@@ -24,7 +24,7 @@ variables:
   DomainBRPushToNuget: False
   #Identity.Abstractions
   IdentityAbstractionsVersion: '1.0.0'
-  IdentityAbstractionsPushToNuget: True
+  IdentityAbstractionsPushToNuget: False
 
 steps:
 # Install NuGet Tool
