@@ -1,7 +1,7 @@
 [![Build Status](https://dev.azure.com/ivanborges/Furiza/_apis/build/status/ivanborges.furiza-base-core)](https://dev.azure.com/ivanborges/Furiza/_build/latest?definitionId=2)
 [![CodeFactor](https://www.codefactor.io/repository/github/ivanborges/furiza-base-core/badge)](https://www.codefactor.io/repository/github/ivanborges/furiza-base-core)
 [![GitHub release](https://img.shields.io/github/release/ivanborges/furiza-base-core.svg)](https://github.com/ivanborges/furiza-base-core/releases)
-# :dragon_face: furiza-base-core
+# :aries: furiza-base-core
 Base packages for core layers (domain and application).
 
 ## Packages
