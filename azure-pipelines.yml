@@ -13,18 +13,18 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  #SeedWork
-  SeedWorkVersion: '1.0.1'
-  SeedWorkPushToNuget: False
-  #Exceptions
-  ExceptionsVersion: '1.0.1'
-  ExceptionsPushToNuget: False
-  #Domain.BR
-  DomainBRVersion: '1.0.1'
-  DomainBRPushToNuget: False
-  #Identity.Abstractions
-  IdentityAbstractionsVersion: '1.0.0'
-  IdentityAbstractionsPushToNuget: False
+
+  #Pack1 -------------------
+  ##SeedWork
+  ##Exceptions
+  ##Domain.BR
+  Pack1Version: '1.0.1'
+  Pack1PushToNuget: False
+
+  #Pack2 -------------------
+  ##Identity.Abstractions
+  Pack2Version: '1.0.0'
+  Pack2PushToNuget: False
 
 steps:
 # Install NuGet Tool
@@ -69,15 +69,15 @@ steps:
 # Publish Furiza.Base.Core.SeedWork to NuGet.org
 - task: DotNetCoreCLI@2
   displayName: Pack Furiza.Base.Core.SeedWork
-  condition: eq(variables['SeedWorkPushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.SeedWork.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: SeedWorkVersion
+    versionEnvVar: Pack1Version
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.SeedWork to NuGet.org
-  condition: eq(variables['SeedWorkPushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   continueOnError: True
   inputs:
     command: push
@@ -88,15 +88,15 @@ steps:
 # Publish Furiza.Base.Core.Exceptions to NuGet.org
 - task: DotNetCoreCLI@2
   displayName: Pack Furiza.Base.Core.Exceptions
-  condition: eq(variables['ExceptionsPushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.Exceptions.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: ExceptionsVersion
+    versionEnvVar: Pack1Version
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Exceptions to NuGet.org
-  condition: eq(variables['ExceptionsPushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   continueOnError: True
   inputs:
     command: push
@@ -107,15 +107,15 @@ steps:
 # Publish Furiza.Base.Core.Domain.BR to NuGet.org
 - task: DotNetCoreCLI@2
   displayName: Pack Furiza.Base.Core.Domain.BR
-  condition: eq(variables['DomainBRPushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.Domain.BR.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: DomainBRVersion
+    versionEnvVar: Pack1Version
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Domain.BR to NuGet.org
-  condition: eq(variables['DomainBRPushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   continueOnError: True
   inputs:
     command: push
@@ -126,15 +126,15 @@ steps:
 # Publish Furiza.Base.Core.Identity.Abstractions to NuGet.org
 - task: DotNetCoreCLI@2
   displayName: Pack Furiza.Base.Core.Identity.Abstractions
-  condition: eq(variables['IdentityAbstractionsPushToNuget'], 'True')
+  condition: eq(variables['Pack2PushToNuget'], 'True')
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.Identity.Abstractions.csproj'
     versioningScheme: byEnvVar
-    versionEnvVar: IdentityAbstractionsVersion
+    versionEnvVar: Pack2Version
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Identity.Abstractions to NuGet.org
-  condition: eq(variables['IdentityAbstractionsPushToNuget'], 'True')
+  condition: eq(variables['Pack2PushToNuget'], 'True')
   continueOnError: True
   inputs:
     command: push
