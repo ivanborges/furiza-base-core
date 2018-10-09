@@ -10,6 +10,10 @@ namespace Furiza.Base.Core.Exceptions.Serialization
         public string Message { get; set; }
         public ICollection<BadRequestErrorItem> Items { get; set; }
 
+        public BadRequestError()
+        {
+        }
+
         public BadRequestError(CoreException coreException)
         {
             Key = coreException.Key;

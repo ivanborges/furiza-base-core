@@ -9,13 +9,12 @@ namespace Furiza.Base.Core.Exceptions.Serialization
 
         public InternalServerError()
         {
-
         }
 
-        public InternalServerError(string message)
+        public InternalServerError(Exception exception)
         {
             LogId = Guid.NewGuid();
-            Message = message;
+            Message = exception.Message;
         }
     }
 }
