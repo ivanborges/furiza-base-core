@@ -108,7 +108,7 @@ steps:
 # Publish Furiza.Base.Core.Exceptions.Serialization to NuGet.org
 - task: DotNetCoreCLI@2
   displayName: Pack Furiza.Base.Core.Exceptions.Serialization
-  #condition: eq(variables['Pack1PushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   inputs:
     command: pack
     packagesToPack: '**/**/Furiza.Base.Core.Exceptions.Serialization.csproj'
@@ -116,7 +116,7 @@ steps:
     versionEnvVar: Pack1Version
 - task: NuGetCommand@2
   displayName: Push Furiza.Base.Core.Exceptions.Serialization to NuGet.org
-  #condition: eq(variables['Pack1PushToNuget'], 'True')
+  condition: eq(variables['Pack1PushToNuget'], 'True')
   continueOnError: True
   inputs:
     command: push
