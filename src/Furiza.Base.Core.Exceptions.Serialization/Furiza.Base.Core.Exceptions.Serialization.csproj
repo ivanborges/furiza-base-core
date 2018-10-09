@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Furīza</Authors>
+    <Copyright>Furīza (C) 2018</Copyright>
+    <PackageProjectUrl>https://github.com/ivanborges/furiza-base-core</PackageProjectUrl>
+    <Description>Serialization of Exceptions project contains common classes for DTO purposes during exceptions serialization and deserialization in an exception handling. In case of a business error, the DTO BadRequestError reflect CoreException properties that can be displayed externally; in case of a system error, the relevant data to be shown is displayed in the DTO InternalServerError.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Furiza.Base.Core.Exceptions.Serialization.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Furiza.Base.Core.Exceptions.Serialization.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Furiza.Base.Core.Exceptions\Furiza.Base.Core.Exceptions.csproj" />
+  </ItemGroup>
+
+</Project>

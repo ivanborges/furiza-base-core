@@ -17,6 +17,7 @@ variables:
   #Pack1 -------------------
   ##SeedWork
   ##Exceptions
+  ##Exceptions.Serialization
   ##Domain.BR
   Pack1Version: '1.0.1'
   Pack1PushToNuget: False
@@ -103,6 +104,25 @@ steps:
     nuGetFeedType: external
     packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.Exceptions.*.nupkg'
     publishFeedCredentials: 'apikey-nuget-core-exceptions'
+
+# Publish Furiza.Base.Core.Exceptions.Serialization to NuGet.org
+- task: DotNetCoreCLI@2
+  displayName: Pack Furiza.Base.Core.Exceptions.Serialization
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  inputs:
+    command: pack
+    packagesToPack: '**/**/Furiza.Base.Core.Exceptions.Serialization.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: Pack1Version
+- task: NuGetCommand@2
+  displayName: Push Furiza.Base.Core.Exceptions.Serialization to NuGet.org
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Base.Core.Exceptions.Serialization.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-core-exceptions.serialization'
 
 # Publish Furiza.Base.Core.Domain.BR to NuGet.org
 - task: DotNetCoreCLI@2
