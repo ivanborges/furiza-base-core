@@ -19,8 +19,8 @@ variables:
   ##Exceptions
   ##Exceptions.Serialization
   ##Domain.BR
-  Pack1Version: '1.0.1'
-  Pack1PushToNuget: False
+  Pack1Version: '1.0.2'
+  Pack1PushToNuget: True
 
   #Pack2 -------------------
   ##Identity.Abstractions
