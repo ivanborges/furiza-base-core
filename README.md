@@ -12,6 +12,7 @@ Base packages for core layers (domain and application).
 ### This project is analysed on SonarCloud!
 
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=ncloc)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
+[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=coverage)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=sqale_index)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=bugs)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
