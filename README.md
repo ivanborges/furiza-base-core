@@ -9,7 +9,7 @@
 # Base Core
 Base packages for core layers (domain and application).
 
-![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)
+![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)
 
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=ncloc)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=coverage)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
