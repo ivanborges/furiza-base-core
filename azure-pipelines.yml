@@ -19,13 +19,13 @@ variables:
   ##Exceptions
   ##Exceptions.Serialization
   ##Domain.BR
-  Pack1Version: '1.0.2'
-  Pack1PushToNuget: False
+  Pack1Version: '1.0.3'
+  Pack1PushToNuget: True
 
   #Pack2 -------------------
   ##Identity.Abstractions
-  Pack2Version: '1.0.1'
-  Pack2PushToNuget: False
+  Pack2Version: '1.0.2'
+  Pack2PushToNuget: True
 
 steps:
 # Install NuGet Tool
