@@ -9,7 +9,7 @@
 # Base Core
 Base packages for core layers (domain and application).
 
-### Nuget details
+## Nuget details
 |Packages|Version & Downloads|
 |---------------------------|:---:|
 |*Furiza.Base.Core.SeedWork*|[![NuGet Version and Downloads count](https://buildstats.info/nuget/Furiza.Base.Core.SeedWork)](https://www.nuget.org/packages/Furiza.Base.Core.SeedWork)|
@@ -18,7 +18,7 @@ Base packages for core layers (domain and application).
 |*Furiza.Base.Core.Identity.Abstractions*|[![NuGet Version and Downloads count](https://buildstats.info/nuget/Furiza.Base.Core.Identity.Abstractions)](https://www.nuget.org/packages/Furiza.Base.Core.Identity.Abstractions)|
 |*Furiza.Base.Core.Domain.BR*|[![NuGet Version and Downloads count](https://buildstats.info/nuget/Furiza.Base.Core.Domain.BR)](https://www.nuget.org/packages/Furiza.Base.Core.Domain.BR)|
 
-![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)
+## ![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)
 
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=ncloc)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=coverage)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
