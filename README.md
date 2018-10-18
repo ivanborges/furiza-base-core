@@ -1,15 +1,20 @@
 [![furiza_logo_transp_6.png](https://www.imagemhost.com.br/images/2018/10/17/furiza_logo_transp_6.png)](https://www.imagemhost.com.br/image/rhCra)
 [![Build Status](https://dev.azure.com/ivanborges/Furiza/_apis/build/status/ivanborges.furiza-base-core)](https://dev.azure.com/ivanborges/Furiza/_build/latest?definitionId=2)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=alert_status)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
+[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![CodeFactor](https://www.codefactor.io/repository/github/ivanborges/furiza-base-core/badge)](https://www.codefactor.io/repository/github/ivanborges/furiza-base-core)
-[![GitHub release](https://img.shields.io/github/release/ivanborges/furiza-base-core.svg)](https://github.com/ivanborges/furiza-base-core/releases)
 
 # Base Core
 Base packages for core layers (domain and application).
 
 ### This project is analysed on SonarCloud!
+
+[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=ncloc)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
+[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
+
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=sqale_index)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=bugs)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
+[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-base-core&metric=code_smells)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-base-core)
 
 ### Nuget details
