@@ -5,6 +5,10 @@
     <Authors>Furīza</Authors>    
     <Copyright>Furīza (C) 2018</Copyright>
     <PackageProjectUrl>https://github.com/ivanborges/furiza-base-core</PackageProjectUrl>
+    <PackageTags>furiza;base;domain</PackageTags>
+    <PackageIconUrl>https://www.imagemhost.com.br/images/2018/10/17/furiza_logo_transp_6.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/ivanborges/furiza-base-core</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <Description>Domain project contains entities and value objects widely used in various brazilian business domains.</Description>
   </PropertyGroup>
 
