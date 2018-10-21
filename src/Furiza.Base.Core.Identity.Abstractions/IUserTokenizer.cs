@@ -2,7 +2,7 @@
 
 namespace Furiza.Base.Core.Identity.Abstractions
 {
-    public interface IUserTokenizer<TUserData> where TUserData : IUserData
+    public interface IUserTokenizer<in TUserData> where TUserData : IUserData
     {
         GenerateTokenResult GenerateToken(TUserData userData);
     }

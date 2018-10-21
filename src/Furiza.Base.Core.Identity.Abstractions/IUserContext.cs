@@ -5,13 +5,13 @@
         IUserData UserData { get; }
     }
 
-    public interface IUserContext<TUserData> 
+    public interface IUserContext<out TUserData> 
         where TUserData : IUserData
     {
         TUserData UserData { get; }
     }
 
-    public interface IUserContext<TUserData, TRoleData, TClaimData> : IUserContext<TUserData>
+    public interface IUserContext<out TUserData, TRoleData, TClaimData> : IUserContext<TUserData>
         where TUserData : IUserData
         where TRoleData : IRoleData
         where TClaimData : IClaimData

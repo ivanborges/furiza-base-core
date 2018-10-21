@@ -42,15 +42,5 @@ namespace Furiza.Base.Core.SeedWork
             else
                 return base.GetHashCode();
         }
-
-        public static bool operator ==(Entity left, Entity right)
-        {
-            if (Equals(left, null))
-                return (Equals(right, null)) ? true : false;
-            else
-                return left.Equals(right);
-        }
-
-        public static bool operator !=(Entity left, Entity right) => !(left == right);
     }
 }
