@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Furiza.Base.Core.SeedWork
 {
-    public abstract class Enumeration : IComparable
+    public abstract class Enumeration
     {
         public int Value { get; set; }
         public string DisplayAs { get; set; }
@@ -52,14 +52,12 @@ namespace Furiza.Base.Core.SeedWork
         public static bool operator ==(Enumeration left, Enumeration right)
         {
             if (Equals(left, null))
-                return (Equals(right, null)) ? true : false;
+                return (Equals(right, null));
             else
                 return left.Equals(right);
         }
 
         public static bool operator !=(Enumeration left, Enumeration right) => !(left == right);
-
-        public int CompareTo(object other) => Value.CompareTo(((Enumeration)other).Value);
 
         #region [+] Pvts
 

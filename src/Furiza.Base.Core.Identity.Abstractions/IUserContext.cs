@@ -5,7 +5,7 @@
         IUserData UserData { get; }
     }
 
-    public interface IUserContext<TUserData> 
+    public interface IUserContext<out TUserData> 
         where TUserData : IUserData
     {
         TUserData UserData { get; }

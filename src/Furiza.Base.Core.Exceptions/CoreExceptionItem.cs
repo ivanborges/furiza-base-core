@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 
 namespace Furiza.Base.Core.Exceptions
 {
-    public abstract class CoreExceptionItem : IComparable
+    public abstract class CoreExceptionItem
     {
         public string Key { get; }
         public string Message { get; }
@@ -53,14 +52,12 @@ namespace Furiza.Base.Core.Exceptions
         public static bool operator ==(CoreExceptionItem left, CoreExceptionItem right)
         {
             if (Equals(left, null))
-                return (Equals(right, null)) ? true : false;
+                return (Equals(right, null));
             else
                 return left.Equals(right);
         }
 
         public static bool operator !=(CoreExceptionItem left, CoreExceptionItem right) => !(left == right);
-
-        public int CompareTo(object other) => Key.CompareTo(((CoreExceptionItem)other).Key);
 
         #region [+] Pvts
 

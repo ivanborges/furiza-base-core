@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Furiza.Base.Core.Identity.Abstractions
 {
@@ -11,5 +12,7 @@ namespace Furiza.Base.Core.Identity.Abstractions
         string Department { get; set; }
         ICollection<IRoleData> Roles { get; set; }
         ICollection<IClaimData> Claims { get; set; }
+        DateTime? CreationDate { get; set; }
+        string CreationUser { get; set; }
     }
 }
