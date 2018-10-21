@@ -14,7 +14,8 @@ namespace Furiza.Base.Core.Exceptions
         public IReadOnlyCollection<T> Items => new ReadOnlyCollection<T>(_items.ToList());
         private readonly IEnumerable<T> _items;
 
-        protected CoreException(IEnumerable<T> coreExceptionItems) : base() => _items = coreExceptionItems;
+        protected CoreException(IEnumerable<T> coreExceptionItems) : base() => 
+            _items = coreExceptionItems;
 
         protected CoreException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
