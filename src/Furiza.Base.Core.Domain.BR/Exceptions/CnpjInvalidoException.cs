@@ -10,7 +10,7 @@ namespace Furiza.Base.Core.Domain.BR.Exceptions
         public override string Key => "CnpjInvalido";
         public override string Message => "O CNPJ fornecido está em branco, é inválido ou está em um formato inválido.";
 
-        public CnpjInvalidoException()
+        public CnpjInvalidoException() : base()
         {
         }
 

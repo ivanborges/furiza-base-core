@@ -10,7 +10,7 @@ namespace Furiza.Base.Core.Domain.BR.Exceptions
         public override string Key => "CpfInvalido";
         public override string Message => "O CPF fornecido está em branco, é inválido ou está em um formato inválido.";
 
-        public CpfInvalidoException()
+        public CpfInvalidoException() : base()
         {
         }
 

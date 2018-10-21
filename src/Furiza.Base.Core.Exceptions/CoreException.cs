@@ -9,7 +9,7 @@ namespace Furiza.Base.Core.Exceptions
         public abstract string Key { get; }
         public abstract override string Message { get; }
 
-        public CoreException()
+        protected CoreException() : base()
         {
         }
 
