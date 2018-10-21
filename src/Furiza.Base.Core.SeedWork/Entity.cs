@@ -9,8 +9,6 @@ namespace Furiza.Base.Core.SeedWork
         public DateTime CreationDate { get; protected set; } = SqlDateTime.MinValue.Value;
         public string CreationUser { get; set; }
 
-        public bool IsTransient() => Id == default(Guid);
-
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is Entity))
@@ -29,18 +27,8 @@ namespace Furiza.Base.Core.SeedWork
                 return item.Id == Id;
         }
 
-        int? _requestedHashCode;
-        public override int GetHashCode()
-        {
-            if (!IsTransient())
-            {
-                if (!_requestedHashCode.HasValue)
-                    _requestedHashCode = Id.GetHashCode() ^ 31;
+        public override int GetHashCode() => Id.GetHashCode() ^ 31;
 
-                return _requestedHashCode.Value;
-            }
-            else
-                return base.GetHashCode();
-        }
+        private bool IsTransient() => Id == default(Guid);
     }
 }
