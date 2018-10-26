@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace Furiza.Base.Core.Identity.Abstractions
 {
-    public interface IUserData
+    public interface IUserWallet
     {
         string UserName { get; }
         string FullName { get; }
@@ -11,9 +11,7 @@ namespace Furiza.Base.Core.Identity.Abstractions
         string HiringType { get; }
         string Company { get; }
         string Department { get; }
-        DateTime? CreationDate { get; }
-        string CreationUser { get; }
-        ICollection<IClaimData> Claims { get; }
+        ICollection<Claim> Claims { get; }
         ICollection<IRoleAssignment> RoleAssignments { get; }
     }
 }

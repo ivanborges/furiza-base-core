@@ -7,7 +7,5 @@ namespace Furiza.Base.Core.Identity.Abstractions
         Guid ClientId { get; }
         string UserName { get; }
         string Role { get; }
-        DateTime? CreationDate { get; }
-        string CreationUser { get; }
     }
 }
