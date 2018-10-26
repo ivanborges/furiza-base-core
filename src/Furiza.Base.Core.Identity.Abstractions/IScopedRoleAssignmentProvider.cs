@@ -6,6 +6,7 @@ namespace Furiza.Base.Core.Identity.Abstractions
 {
     public interface IScopedRoleAssignmentProvider
     {
-        Task<IEnumerable<IScopedRoleAssignment>> GetUserScopedRoleAssignmentsAsync(string username, Guid clientId);
+        Task<IEnumerable<TScopedRoleAssignment>> GetUserScopedRoleAssignmentsAsync<TScopedRoleAssignment>(string username, Guid clientId)
+            where TScopedRoleAssignment : IScopedRoleAssignment;
     }
 }
