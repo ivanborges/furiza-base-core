@@ -1,20 +1,24 @@
-﻿namespace Furiza.Base.Core.Identity.Abstractions
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Furiza.Base.Core.Identity.Abstractions
 {
-    public interface IUserContext
+    public interface IUserContext<out TUserWallet, TScopedRoleAssignment>
+        where TUserWallet : IUserWallet
+        where TScopedRoleAssignment : IScopedRoleAssignment
     {
-        IUserData UserData { get; }
+        TUserWallet UserWallet { get; }
+        Task<IEnumerable<TScopedRoleAssignment>> GetScopedRoleAssignmentsAsync();
     }
 
-    public interface IUserContext<out TUserData> 
-        where TUserData : IUserData
+    public interface IUserContext<out TUserWallet, TScopedRoleAssignment, TRoleAssignment> : IUserContext<TUserWallet, TScopedRoleAssignment>
+        where TUserWallet : IUserWallet
+        where TScopedRoleAssignment : IScopedRoleAssignment
+        where TRoleAssignment : IRoleAssignment
     {
-        TUserData UserData { get; }
     }
 
-    public interface IUserContext<out TUserData, TRoleData, TClaimData> : IUserContext<TUserData>
-        where TUserData : IUserData
-        where TRoleData : IRoleData
-        where TClaimData : IClaimData
+    public interface IUserContext : IUserContext<IUserWallet, IScopedRoleAssignment>
     {
     }
 }
