@@ -4,7 +4,7 @@ namespace Furiza.Base.Core.Identity.Abstractions
 {
     public interface IUserTokenizer<in TUserWallet> where TUserWallet : IUserWallet
     {
-        GenerateTokenResult GenerateToken(TUserWallet userData);
+        GenerateTokenResult GenerateToken(TUserWallet userWallet);
     }
 
     public class GenerateTokenResult

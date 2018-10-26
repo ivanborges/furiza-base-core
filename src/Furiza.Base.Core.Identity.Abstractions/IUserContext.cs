@@ -7,7 +7,7 @@ namespace Furiza.Base.Core.Identity.Abstractions
         where TUserWallet : IUserWallet
         where TScopedRoleAssignment : IScopedRoleAssignment
     {
-        TUserWallet UserData { get; }
+        TUserWallet UserWallet { get; }
         Task<IEnumerable<TScopedRoleAssignment>> GetScopedRoleAssignmentsAsync();
     }
 
