@@ -2,10 +2,11 @@
 
 namespace Furiza.Base.Core.Identity.Abstractions
 {
-    public interface IClaimData
+    public interface IRoleAssignment
     {
-        string Type { get; }
-        string Value { get; }
+        Guid ClientId { get; }
+        string UserName { get; }
+        string Role { get; }
         DateTime? CreationDate { get; }
         string CreationUser { get; }
     }

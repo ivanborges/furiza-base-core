@@ -13,6 +13,11 @@
         public const string Department = "department";
 
         /// <summary>
+        /// Type of hiring to which the employee is linked to company.
+        /// </summary>
+        public const string HiringType = "hiring_type";
+
+        /// <summary>
         /// When the user has been created.
         /// </summary>
         public const string CreationDate = "creation_date";
