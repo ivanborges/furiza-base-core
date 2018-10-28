@@ -3,15 +3,15 @@ using System.Threading.Tasks;
 
 namespace Furiza.Base.Core.Identity.Abstractions
 {
-    public interface IUserWalletBuilder<out TUserWallet, TScopedRoleAssignment>
-        where TUserWallet : IUserWallet
+    public interface IUserPrincipalBuilder<out TUserPrincipal, TScopedRoleAssignment>
+        where TUserPrincipal : IUserPrincipal
         where TScopedRoleAssignment : IScopedRoleAssignment
     {
-        TUserWallet UserWallet { get; }
+        TUserPrincipal UserPrincipal { get; }
         Task<IEnumerable<TScopedRoleAssignment>> GetScopedRoleAssignmentsAsync();
     }
 
-    public interface IUserWalletBuilder : IUserWalletBuilder<IUserWallet, IScopedRoleAssignment>
+    public interface IUserPrincipalBuilder : IUserPrincipalBuilder<IUserPrincipal, IScopedRoleAssignment>
     {
     }
 }

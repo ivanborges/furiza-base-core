@@ -8,9 +8,19 @@
         public const string Company = "company";
 
         /// <summary>
+        /// Additional company of the group to which the user is linked.
+        /// </summary>
+        public const string SideCompany = "side_company";
+
+        /// <summary>
         /// Department to which the user is linked.
         /// </summary>
         public const string Department = "department";
+
+        /// <summary>
+        /// Additional department to which the user is linked.
+        /// </summary>
+        public const string SideDepartment = "side_department";
 
         /// <summary>
         /// Type of hiring to which the employee is linked to company.
