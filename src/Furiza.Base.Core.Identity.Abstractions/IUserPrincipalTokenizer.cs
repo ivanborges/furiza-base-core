@@ -2,10 +2,10 @@
 
 namespace Furiza.Base.Core.Identity.Abstractions
 {
-    public interface IUserWalletTokenizer
+    public interface IUserPrincipalTokenizer
     {
-        GenerateTokenResult GenerateToken<TUserWallet>(TUserWallet userWallet)
-            where TUserWallet : IUserWallet;
+        GenerateTokenResult GenerateToken<TUserPrincipal>(TUserPrincipal userPrincipal)
+            where TUserPrincipal : IUserPrincipal;
     }
 
     public class GenerateTokenResult

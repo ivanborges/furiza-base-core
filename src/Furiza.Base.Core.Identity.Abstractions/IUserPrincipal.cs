@@ -3,7 +3,7 @@ using System.Security.Claims;
 
 namespace Furiza.Base.Core.Identity.Abstractions
 {
-    public interface IUserWallet
+    public interface IUserPrincipal
     {
         string UserName { get; set; }
         string FullName { get; set; }
