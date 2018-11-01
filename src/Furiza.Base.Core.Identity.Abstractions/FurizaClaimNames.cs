@@ -41,5 +41,10 @@
         /// Identifies the user as a system user.
         /// </summary>
         public const string SystemUser = "system_user";
+
+        /// <summary>
+        /// Client to which the user is authenticated.
+        /// </summary>
+        public const string ClientId = "client_id";
     }
 }
