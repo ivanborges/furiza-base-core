@@ -25,7 +25,7 @@ variables:
   #Pack2 -------------------
   ##Identity.Abstractions
   Pack2Version: '2.1.0'
-  Pack2PushToNuget: False
+  Pack2PushToNuget: True
 
 steps:
 # Install NuGet Tool
