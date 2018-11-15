@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Furiza.Base.Core.Identity.Abstractions
@@ -8,6 +9,8 @@ namespace Furiza.Base.Core.Identity.Abstractions
         where TScopedRoleAssignment : IScopedRoleAssignment
     {
         TUserPrincipal UserPrincipal { get; }
+
+        Guid GetCurrentClientId();
         Task<IEnumerable<TScopedRoleAssignment>> GetScopedRoleAssignmentsAsync();
     }
 
