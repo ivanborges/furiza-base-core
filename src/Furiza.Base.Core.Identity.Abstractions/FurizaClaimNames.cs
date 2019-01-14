@@ -46,5 +46,10 @@
         /// Client to which the user is authenticated.
         /// </summary>
         public const string ClientId = "client_id";
+
+        /// <summary>
+        /// Access Token that generated the User Principal.
+        /// </summary>
+        public const string AccessToken = "access_token";
     }
 }
