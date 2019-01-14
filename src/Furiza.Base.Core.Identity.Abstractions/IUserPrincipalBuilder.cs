@@ -11,6 +11,7 @@ namespace Furiza.Base.Core.Identity.Abstractions
         TUserPrincipal UserPrincipal { get; }
 
         Guid GetCurrentClientId();
+        string GetAccessToken();
         Task<IEnumerable<TScopedRoleAssignment>> GetScopedRoleAssignmentsAsync();
     }
 
