@@ -48,8 +48,13 @@
         public const string ClientId = "client_id";
 
         /// <summary>
-        /// Access Token that generated the User Principal.
+        /// Token that generated the User Principal.
         /// </summary>
         public const string AccessToken = "access_token";
+
+        /// <summary>
+        /// Token used in order to generate a new Access Token.
+        /// </summary>
+        public const string RefreshToken = "refresh_token";
     }
 }
