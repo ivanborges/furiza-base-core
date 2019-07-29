@@ -13,6 +13,10 @@ namespace Furiza.Base.Core.Identity.Abstractions
         Guid GetCurrentClientId();
         string GetAccessToken();
         Task<IEnumerable<TScopedRoleAssignment>> GetScopedRoleAssignmentsAsync();
+
+        bool HasSuperuserRights();
+        bool HasAdministratorRights();
+        bool HasEditorRights();
     }
 
     public interface IUserPrincipalBuilder : IUserPrincipalBuilder<IUserPrincipal, IScopedRoleAssignment>
