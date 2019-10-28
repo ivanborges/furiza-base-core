@@ -26,5 +26,10 @@
         /// Can only view resources in a client.
         /// </summary>
         public const string Viewer = "viewer";
+
+        /// <summary>
+        /// Can review edited resources.
+        /// </summary>
+        public const string Reviewer = "Reviewer";
     }
 }
